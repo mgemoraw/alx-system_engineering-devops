@@ -1,1 +1,1 @@
-This repository is the main repository for shell variables and expansions
+Hello shell variables and expansions
