@@ -3,9 +3,9 @@
 
 counter=1
 
-while (($counter<=10))
+while ((counter<=10))
 do
     echo "Best School"
     ((counter++))
-    #counter=$(($counter + 1))
+    
 done

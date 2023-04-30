@@ -6,6 +6,5 @@ a=0
 until [ $a == 10 ]
 do
     echo "Best School"
-    #a=$((a+1))
-    a=`expr $a + 1`
+    a=$((a+1))
 done
