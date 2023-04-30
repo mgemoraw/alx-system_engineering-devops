@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script prints "Best School" 10 times
 
-a=1
+a=0
 
 until [ $a == 10 ]
 do
