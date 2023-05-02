@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Displays list of currently running processes
 
-ps -aux
+ps -auxf
 
