@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #prints "Best School 10 times"
 
-n=1
+n=0
 
-unitl [ $n == 10 ]
+until [ $n == 10 ]
 do
     echo "Best school"
-    n=$((a+1))
+    n=$((n+1))
 done

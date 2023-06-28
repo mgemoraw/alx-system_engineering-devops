@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # says hi for i = 9
 
-counter=0
+counter=1
 
 while ((counter<=10))
 do
