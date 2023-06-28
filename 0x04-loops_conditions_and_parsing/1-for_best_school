@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
-<<<<<<< HEAD
 #prints "Best School 10 times"
 
-=======
->>>>>>> 62e353597fe09a09a7bb5de80f204fbc9272a6c2
 for ((i=0; i < 10; i++))
 do
     echo "Best School"
