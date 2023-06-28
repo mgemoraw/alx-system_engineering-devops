@@ -1,2 +1,24 @@
 #!/usr/bin/env bash
-#
+# prints fizzbuzz if number is multiple of 3 and 5
+# prints Fizz when number is multiple of 3
+# prints Buzz when number is multiple of 5
+# displays number otherwise
+
+counter=0
+
+while ((counter < 100))
+do
+    if [ $((counter%15)) = 0 ]
+    then
+        echo "FizzBuzz"
+    elif [ $((counter%3)) = 0 ]
+    then
+        echo "Fizz"
+    elif [ $((counter%5)) = 0 ]
+    then
+        echo "Buzz"
+    else
+        echo "$counter"
+    fi
+    ((counter++))
+done
