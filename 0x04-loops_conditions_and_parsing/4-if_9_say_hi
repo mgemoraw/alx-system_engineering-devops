@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# says hi for i = 9
+
+counter=0
+
+while ((counter<=10))
+do
+    echo "Best School"
+    if [ $counter == 9 ]
+    then
+        echo "Hi"
+    fi
+    ((counter++))
+done

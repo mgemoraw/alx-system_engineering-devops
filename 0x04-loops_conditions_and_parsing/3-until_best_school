@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#prints "Best School 10 times"
+
+n=0
+
+unitl [ $n == 10 ]
+do
+    echo "Best school"
+    n=$((a+1))
+done
