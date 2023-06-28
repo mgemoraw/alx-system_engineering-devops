@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #prints "Best School 10 times"
 
-n=0
+n=1
 
 unitl [ $n == 10 ]
 do
