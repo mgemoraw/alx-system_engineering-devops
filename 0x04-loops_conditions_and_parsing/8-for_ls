@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#displays the conent of of the current directory
+#in a list format
+
+array=($(ls *))
+for d in $array
+do
+	echo $d
+done
+
