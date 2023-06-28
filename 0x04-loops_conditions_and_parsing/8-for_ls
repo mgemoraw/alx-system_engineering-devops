@@ -2,9 +2,8 @@
 #displays the conent of of the current directory
 #in a list format
 
-array=($(ls *))
-for d in $array
+for file in *
 do
-	echo $d
+	echo $file | cut -d'-' -f2
 done
 
