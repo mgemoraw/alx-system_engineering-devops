@@ -4,9 +4,9 @@
 # prints Buzz when number is multiple of 5
 # displays number otherwise
 
-counter=0
+counter=1
 
-while ((counter < 100))
+while ((counter <= 100))
 do
     if [ $((counter%15)) = 0 ]
     then
