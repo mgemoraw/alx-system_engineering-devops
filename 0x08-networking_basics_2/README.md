@@ -1,5 +1,5 @@
 # Networking Basics 2
-![LOCALHOST]('localhost.png')
+![LOCALHOST](localhost.png)
 ## Resources
 ### Read or watch:
 
