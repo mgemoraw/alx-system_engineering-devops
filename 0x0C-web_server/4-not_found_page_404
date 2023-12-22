@@ -3,26 +3,8 @@
 
 sudo apt-get update
 sudo apt-get install -y nignx
-echo "Hello Wodld!" > index.html
-sudo mv index.html /var/www/html
+rep_str="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\tinternal;\n\t}"
 
-echo "Cei n'est pas une page" > 404.html
-sudo mv 404.html /var/www/html
+sudo sed -i "s/listen 80 default_server;/$rep_str/" /etc/nginx/sites-enabled/default
 
-echo "sever {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.html;
-    location /redirect_me {
-        return 301 https://www.github.com;
-    }
-    error_page 404 /404.html;
-    location = /404.html {
-        internal;
-    }
-}" > default
-
-sudo mv -f default /etc/nginx/sites-available/default
-sudo seveice nginx/restart
+sudo seveice nginx restart
