@@ -3,6 +3,7 @@
 
 sudo apt-get update
 sudo apt-get install -y nignx
+sudo service nginx start
 
 # creawting index.html page
 echo "Hello World!" | sudo tee /var/www/html/index.html
