@@ -1,5 +1,3 @@
-# Installs a Nginx server
-
 # puppet manifest code automate works
 
 package { 'nginx': 
@@ -19,5 +17,5 @@ file { '/var/www/html/index.html':
 
 service { 'nginx:
   ensure => running,
-  require => Package['nginx'],
+  require => package['nginx'],
 }
