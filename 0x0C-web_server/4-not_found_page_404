@@ -5,8 +5,9 @@ sudo apt-get update
 sudo apt-get install -y nignx
 
 # creawting index.html page
-echo "Hello World!" | sudo tee /var/www/index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
+# creating 301 redirection
 rep_str="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/mgemoraw permanent;"
 sudo sed -i "s/server_name _;/$rep_str/" /etc/nginx/sites-enabled/default
 
