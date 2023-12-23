@@ -11,11 +11,24 @@ file_line { 'install':
   line  => 'rewrite ^/redirect_me https://github.com/mgemoraw permanent;',
 }
 
+# creating index file
 file { '/var/www/html/index.html':
-  content => "Hello World!",
+  content => "Hello World!\n",
 }
 
+# creating error page file
+file {'/var/www/html/404.html':
+  content => "Ceci n'est pas une page\n",
+}
+
+# restart service
+exec { 'restart service':
+  command => 'service nginx restart',
+  path    => '/usr/bin:/usr/sbin:/bin',
+}
+
+# start service nginx
 service { 'nginx':
   ensure => running,
-  require => package['nginx'],
+  require => Package['nginx'],
 }
