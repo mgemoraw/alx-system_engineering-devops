@@ -8,6 +8,10 @@ sudo service nginx start
 # creawting index.html page
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
+rep_str="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/mgemoraw permanent;"
+sudo sed -i "s/server_name _;/$rep_str/" /etc/nginx/sites-enabled/default
+
+# changing redirection to error page
 err_str="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\tinternal;\n\t}"
 
 sudo sed -i "s/listen 80 default_server;/$err_str/" /etc/nginx/sites-available/default
