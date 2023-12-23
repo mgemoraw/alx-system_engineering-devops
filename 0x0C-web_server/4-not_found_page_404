@@ -3,6 +3,9 @@
 
 sudo apt-get update
 sudo apt-get install -y nignx
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/404.html
+
 rep_str="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\tinternal;\n\t}"
 
 sudo sed -i "s/listen 80 default_server;/$rep_str/" /etc/nginx/sites-enabled/default
