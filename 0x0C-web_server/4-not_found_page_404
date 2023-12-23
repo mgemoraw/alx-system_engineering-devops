@@ -4,10 +4,15 @@
 sudo apt-get update
 sudo apt-get install -y nignx
 
-echo "Ceci n'est pas une page" | sudo tee /var/www/404.html
+# creawting index.html page
+echo "Hello World!" | sudo tee /var/www/index.html
 
 rep_str="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\tinternal;\n\t}"
 
+# creating a 404 error page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
 sudo sed -i "s/listen 80 default_server;/$rep_str/" /etc/nginx/sites-enabled/default
 
+# restarting service after changes
 sudo seveice nginx restart
