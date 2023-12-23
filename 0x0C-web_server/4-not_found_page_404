@@ -7,10 +7,6 @@ sudo apt-get install -y nignx
 # creawting index.html page
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
-# creating 301 redirection
-rep_str="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/mgemoraw permanent;"
-sudo sed -i "s/server_name _;/$rep_str/" /etc/nginx/sites-enabled/default
-
 err_str="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\tinternal;\n\t}"
 
 # creating a 404 error page
