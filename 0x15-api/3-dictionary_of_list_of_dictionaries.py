@@ -3,16 +3,16 @@
 import requests
 import json
 
-if __name__=="__main__":
-    
+if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
     users = requests.get(url + "users").json()
 
     with open("todo_all_employees.json", 'w') as jfile:
         json.dump({
-            user.get("id"): [{
-                "task": task.get("title"),
-                "complted": task.get("completed"),
-                "usrename": user.get("username")
-            } for task in requests.get(url+"todos", params={"userid": user.get("id")}).json()]
-            for user in users}, jfile)
+            u.get("id"): [{
+                "task": t.get("title"),
+                "complted": t.get("completed"),
+                "usrename": t.get("username")
+            } for t in requests.get(url + "todos",
+                                    params={"userid": u.get("id")}).json()]
+            for u in users}, jfile)

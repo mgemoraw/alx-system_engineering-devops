@@ -4,12 +4,12 @@ import sys
 import requests
 import json
 
-if __name__=="__main__":
+if __name__ == "__main__":
     user_id = sys.argv[1]
     url = "https://jsonplaceholder.typicode.com/"
     user = requests.get(url + "users/{}".format(sys.argv[1])).json()
     user_name = user.get("username")
-    todos = requests.get(url + "todos", params={"userId":user_id}).json()
+    todos = requests.get(url + "todos", params={"userId": user_id}).json()
 
     with open("{}.josn".format(user_id), 'w') as jfile:
         json.dump({user_id: [{

@@ -5,12 +5,12 @@ import requests
 import csv
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     user_id = sys.argv[1]
     url = "https://jsonplaceholder.typicode.com/"
     user = requests.get(url + "users/{}".format(sys.argv[1])).json()
     user_name = user.get("username")
-    todos = requests.get(url + "todos", params={"userId":user_id}).json()
+    todos = requests.get(url + "todos", params={"userId": user_id}).json()
 
     with open("{}.csv".format(user_id), 'w', newline="") as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
